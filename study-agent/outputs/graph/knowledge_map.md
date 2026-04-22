@@ -16,4 +16,13 @@ graph TD
     K --> N[Reduce Tasks]
     M --> O[Shuffle]
     O --> N
+    A --> P[Concurrency]
+    P --> Q[Threads and Goroutines]
+    Q --> R[Shared Memory]
+    R --> S[Race Conditions]
+    S --> T[Mutexes]
+    Q --> U[Channels]
+    Q --> V[RPC Servers]
+    B --> W[RPC]
+    W --> X[RPC Failure Semantics]
 ```

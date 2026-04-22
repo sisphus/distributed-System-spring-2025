@@ -24,3 +24,12 @@
 - Correct reasoning: The Map function emits individual key-value pairs: `(a, 1)`, `(b, 1)`, `(a, 1)`. The shuffle step later groups them as `a -> [1, 1]` and `b -> [1]`.
 - Error type: Concept boundary misunderstanding.
 - Fix strategy: Separate the three stages explicitly: Map emits pairs, Shuffle groups by key, Reduce combines values.
+
+## 2026-04-22 - Race Conditions
+
+- Topic: MIT 6.5840 Lecture 2 - Shared State Race
+- Question: Why is checking `fetched[url] == false` and later setting `fetched[url] = true` unsafe if two goroutines can do it at the same time?
+- User answer: "because there are multiple threads, they can modify the same old data many times or fetch the stale data"
+- Correct reasoning: Two goroutines can both read `fetched[url] == false` before either one sets it to `true`. Since both made the decision from the old value, both may fetch the same URL. The check and set must be protected together as one critical section.
+- Error type: Minor concept precision issue.
+- Fix strategy: Use a two-goroutine timeline to show that the race is caused by interleaving between read/check and write/set.

@@ -37,3 +37,53 @@
 - Review timing: 1 week.
 - Review prompt: Explain why reduce workers may need to fetch data from every map worker.
 - Status: Scheduled.
+
+- Topic: MapReduce coordinator
+- Reason: User answered correctly.
+- Review timing: 1 week.
+- Review prompt: Name two task states the coordinator tracks, and explain why tracking them matters.
+- Status: Scheduled.
+
+- Topic: Map task crash recovery
+- Reason: User answered correctly.
+- Review timing: 1 week.
+- Review prompt: Explain why completed map output can still be lost after a worker crash.
+- Status: Scheduled.
+
+- Topic: MapReduce determinism
+- Reason: User answered correctly.
+- Review timing: 1 week.
+- Review prompt: Explain why the same Map input must always produce the same intermediate output.
+- Status: Scheduled.
+
+- Topic: MapReduce stragglers
+- Reason: User understood reducer waiting but should generalize to all required tasks in a stage.
+- Review timing: 3 days.
+- Review prompt: Explain why a single slow map task can delay the start or completion of reduce work.
+- Status: Scheduled.
+
+- Topic: MapReduce data locality
+- Reason: User answered correctly.
+- Review timing: 1 week.
+- Review prompt: Explain how running Map near its input reduces network bottlenecks.
+- Status: Scheduled.
+
+- Topic: MapReduce restrictions
+- Reason: User understood shared-state risk but should connect restrictions to safe retries and parallel execution.
+- Review timing: 3 days.
+- Review prompt: Explain why deterministic independent tasks make MapReduce fault recovery easier.
+- Status: Scheduled.
+
+### 2026-04-22
+
+- Topic: Goroutines and I/O concurrency
+- Reason: User answered correctly.
+- Review timing: 1 week.
+- Review prompt: Explain why overlapping network waits can make a concurrent web crawler faster than a serial crawler.
+- Status: Scheduled.
+
+- Topic: Race conditions in shared state
+- Reason: User identified shared-data danger but needs sharper check-then-set reasoning.
+- Review timing: Same day.
+- Review prompt: Show a two-goroutine timeline where both goroutines read `fetched[url] == false` and both fetch the same URL.
+- Status: Scheduled.
